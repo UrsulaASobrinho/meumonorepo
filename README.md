@@ -8,7 +8,7 @@ Cada pasta abaixo corresponde a um projeto independente, com seus próprios cont
 - [Projeto 1 — DonateCrypto](./projeto1/README.md)
 
 
-> Adicione novos projetos seguindo o padrão abaixo!
+> Estarei adicioando novos projetos seguindo o este padrão!
 
 ---
 
