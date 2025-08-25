@@ -3,11 +3,12 @@
 Este repositório reúne todos os projetos desenvolvidos durante o curso de Solidity.  
 Cada pasta abaixo corresponde a um projeto independente, com seus próprios contratos, testes e instruções.
 
-## Lista de Projetos
+## Web3 para Iniciantes (Início: Agosto/2025 - Conclusão: )
+Apesar de já ter realizado alguns projetos com Web3, optei por cursar o nível 1 para nivelar meus conhecimentos e reforçar os princípios fundamentais do Solidity.
 
 - [Projeto 1 — DonateCrypto](./projeto1/README.md)
 
-
+## Web3   (Início:  - Conclusão: )
 > Estarei adicioando novos projetos seguindo o este padrão!
 
 ---
