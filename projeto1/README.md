@@ -4,6 +4,10 @@ Este projeto é um contrato inteligente Solidity para uma plataforma de doaçõe
 
 > **Desenvolvido como projeto do curso** de desenvolvimento de contratos inteligentes em Solidity.
 
+
+
+# Smart Contract 
+
 ## Funcionalidades
 
 - **Criar campanhas**: Qualquer usuário pode criar uma campanha de doação com título, descrição, vídeo e imagem.
@@ -56,6 +60,22 @@ Este projeto é um contrato inteligente Solidity para uma plataforma de doaçõe
 ## Licença
 
 Este projeto está licenciado sob a [MIT License](LICENSE).
+
+
+
+# dapp 
+
+## Estrutura 
+/app
+├── page.js //  página inicial
+└── create
+    └── page.js // página para cadastro da campanha
+
+## Modelagem do FronfEnd 
+
+- Next.js
+- Bootstrap
+
 
 ---
 
