@@ -2,6 +2,8 @@
 
 import { useRouter } from "next/navigation";  //pacote de função 
 import { useState } from "react";
+import { doLogin } from "./services/Web3Service";
+
 
 export default function Home() {
 
@@ -11,7 +13,12 @@ export default function Home() {
 
   function btnloginClick(){
     setMessage("Conectado a carteira....aguarde....");
-    push("/create");
+    doLogin()
+      .then(accounts =>push("/create"))
+      .catch(err =>{
+        console.error(err);  //joga no console 
+        setMessage(err.message); //joga na mensagem da pag
+      })
   }
 
   return (

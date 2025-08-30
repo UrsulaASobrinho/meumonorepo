@@ -6,7 +6,7 @@ Este projeto é um contrato inteligente Solidity para uma plataforma de doaçõe
 
 
 
-# Smart Contract 
+# BACKEND Smart Contract 
 
 ## Funcionalidades
 
@@ -63,14 +63,16 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 
 
 
-# dapp 
+# FRONTEND  dapp 
 
-## Estrutura 
+## Estrutura
+
+```
 /app
-├── page.js //  página inicial
+├── page.js       // página inicial
 └── create
-    └── page.js // página para cadastro da campanha
-
+    └── page.js   // página para cadastro da campanha
+```
 ## Modelagem do FronfEnd 
 
 - Next.js
