@@ -1,9 +1,9 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.30;
+pragma solidity ^0.8.20;
 
 
 struct Campaign {
- address  autthor;
+ address  author;
  string   title;
  string   description;
  string   videoUrl;
@@ -19,14 +19,19 @@ contract DonateCrypto{
     mapping ( uint256 => Campaign ) public campaings;  //id==>campaing
 
     //calldata -> gravar temporariamente na memoria
-    function addCampaign(string calldata  title, string  calldata description, string  calldata videoUrl, string  calldata  imageUrl)  public {
+    function addCampaign(
+        string calldata  title,
+        string  calldata description,
+        string  calldata videoUrl,
+        string  calldata  imageUrl
+    )  public {
         Campaign memory newCampaign;
         newCampaign.title = title;
         newCampaign.description = description;
         newCampaign.imageUrl = imageUrl;
         newCampaign.videoUrl = videoUrl;
         newCampaign.active = true;
-        newCampaign.autthor = msg.sender;
+        newCampaign.author = msg.sender;
 
         nextId++;
         campaings[nextId] = newCampaign;
@@ -43,11 +48,12 @@ contract DonateCrypto{
 
     function withdraw(uint256 id) public{
         Campaign memory campaign = campaings[id];
-        require(campaign.autthor == msg.sender, "You do not permission");
+        require(campaign.author == msg.sender, "You do not permission");
         require(campaign.active == true, "This campaign is closed");
         require(campaign.balance > fee, "This campaign does not have enough balance");
 
-        address payable recipient = payable(campaign.autthor); 
+    
+        address payable recipient = payable(campaign.author); 
         recipient.call{value: campaign.balance - fee}("");
 
         campaings[id].active = false;

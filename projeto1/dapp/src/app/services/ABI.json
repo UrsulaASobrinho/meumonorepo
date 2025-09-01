@@ -65,7 +65,7 @@
 		"outputs": [
 			{
 				"internalType": "address",
-				"name": "autthor",
+				"name": "author",
 				"type": "address"
 			},
 			{

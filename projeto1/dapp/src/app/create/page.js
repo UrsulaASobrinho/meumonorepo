@@ -1,7 +1,8 @@
 "use client"
+
 import { useState } from "react";
-import { addCampaign } from "./services/Web3Service";
-import { getLastCampaignId } from "../services/Web3Service";
+import { addCampaign, getLastCampaignId } from "../services/Web3Service";
+//import { getLastCampaignId } from "../services/Web3Service";
 
 export default function Create() {
 
@@ -25,7 +26,7 @@ export default function Create() {
       addCampaign(campaign)
       //.then(tx => setMessage(JSON,stringify[tx]))
       .then(tx => getLastCampaignId())
-      .then(id => setMessage('Campanha foi salva com o ID ${id}. Em alguns minutos ela estará pronta para receber doações, use esse link para divulgá-la: http://localhost:3001/donate/${id}'))
+      .then(id => setMessage(`Campanha foi salva com o ID ${id}. Em alguns minutos ela estará pronta para receber doações, use esse link para divulgá-la: http://localhost:3001/donate/${id}`))
       .catch(err => {
           console.error(err);
           setMessage(err.message);

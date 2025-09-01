@@ -73,8 +73,15 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 └── create
     └── page.js   // página para cadastro da campanha
 └── services
-    └── Web3Service.js   // função de login com a MetMask
-    └── ABI.js   // especificação 
+    └── Web3Service.js   // funções:
+                        doLogin  - funcao de login com a MetMask;
+                        getContract - funcao comunicacao com a MetMask;
+                        addCampaign - funcao para adcionar campanha na blockchain;
+                        getLastCampaignId - funcao para pegar o ultimo Id ;
+
+    └── ABI.js   // especificação do smartcontract
+└── donate
+    └──[id] // pasta onde fica as camapnha cadastradas por id
 ```
 ## Modelagem do FronfEnd 
 

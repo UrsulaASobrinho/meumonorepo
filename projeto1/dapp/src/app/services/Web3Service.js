@@ -1,8 +1,10 @@
 import Web3 from "web3";
 import ABI from "./ABI";
-import { contract } from "web3/lib/commonjs/eth.exports";
+//import { contract } from "web3/lib/commonjs/eth.exports";
+//import { contract } from "web3/lib/commonjs/eth.exports";
 
-const CONTRACT_ADDRESS = "";
+
+const CONTRACT_ADDRESS = "0x2793c2ee8f5f57b9016885933fe401d39d49094d";
 
 export async function doLogin(){
   
@@ -28,12 +30,28 @@ function getContract(){
 }
 
 export async function addCampaign(campaign) {
-    const Contract = getContract();
+    const contract = getContract();
     
     //chamada da funcao do smartcontract
     //addCampaign -> nome do metodo dentro do smatcontract 
     // (campos/variaveis)
     //.send envio para a blockchain
+   
+    //return contract.methods.addCampaign(campaign.title, campaign.description, campaign.videoUrl, campaign.imageUrl).send();
     return contract.methods.addCampaign(campaign.title, campaign.description, campaign.videoUrl, campaign.imageUrl).send();
+}
 
+//funcao para pegar o ultimo Id da ampanha cadastrada
+export async function getLastCampaignId(params) {
+    const contract = getContract();
+   
+    //pega o nome da variavel publica no smatcontract
+    //.call faz a chamada para obter a inofrmação
+    return contract.methods.nextId().call();
+    
+}
+
+export async function getCampaign(id){
+    const contract = getContract();
+    return contract.methods.campaings(id).call();
 }
